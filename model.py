@@ -52,8 +52,11 @@ def get_lora_target_modules():
 # Step 6 - attach_lora_adapters (not yet solved)
 # TODO: implement
 
-# Step 7 - count_trainable_parameters (not yet solved)
-# TODO: implement
+# Step 7 - count_trainable_parameters
+def count_trainable_parameters(model):
+    """Return the number of trainable parameters in `model`."""
+    # TODO: sum p.numel() over model.parameters() where requires_grad is True
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 # Step 8 - trainable_fraction (not yet solved)
 # TODO: implement
