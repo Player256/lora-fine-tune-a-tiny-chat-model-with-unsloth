@@ -96,8 +96,20 @@ def format_all_examples(examples):
         f"### Instruction:\n{e['instruction']}\n\n### Response:\n{e['response']}" for e in examples
     ]
 
-# Step 12 - build_text_dataset (not yet solved)
-# TODO: implement
+# Step 12 - build_text_dataset
+from datasets import Dataset
+
+
+def build_text_dataset(texts):
+    """Wrap a list of training strings in a HF Dataset with a 'text' column."""
+    # TODO: return a datasets.Dataset with one 'text' column holding the given strings
+    data_dict = {
+        "text" : texts
+    }
+
+    ds = Dataset.from_dict(data_dict)
+
+    return ds
 
 # Step 13 - tokenize_text (not yet solved)
 # TODO: implement
